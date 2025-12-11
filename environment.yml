@@ -1,0 +1,40 @@
+name: search-engine
+channels:
+  - pytorch
+  - conda-forge
+  - nvidia
+  - defaults
+
+dependencies:
+  - python=3.10.0
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda
+  - numpy
+  - pillow
+  - transformers
+  - accelerate
+  - matplotlib
+  - pip
+  - pip:
+      - build
+      - pytrec_eval==0.5
+      - setuptools
+      - pandas
+      - tqdm
+      - easydict
+      - datasets
+      - transformers
+      - huggingface_hub
+      - python-dotenv
+      - sentence-transformers
+      - gdown
+      - argparse
+      - rank-bm25
+      - nltk
+      - func_timeout
+      - numpy
+      - scipy
+      - ijson
+      - jcc

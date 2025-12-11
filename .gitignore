@@ -1,0 +1,50 @@
+# Large training data files
+train_150000.json
+train_150000.zip
+
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.*
+
+# Coverage and test artifacts
+coverage/
+*.coverage
+.cache/
+
+# Package managers
+*.lock
+
+# General pattern for large JSON or ZIP datasets
+*.json.gz
+*.jsonl
+*.zip
+*.tar
+*.tar.gz
