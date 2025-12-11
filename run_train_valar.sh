@@ -14,7 +14,7 @@
 #SBATCH --output=outputs/train_%j.out    # Standard output log file
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=alp.caferoglu@bilkent.edu.tr
-#SBATCH --mem=64G
+#SBATCH --mem=32G
 
 # ========================================
 # ===== LOADING LIBRARY AND MODULES =====
