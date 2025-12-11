@@ -2,6 +2,8 @@
 train_150000.json
 train_150000.zip
 
+# output folder
+outputs/
 
 # OS junk
 .DS_Store

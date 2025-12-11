@@ -20,6 +20,7 @@
 # ===== LOADING LIBRARY AND MODULES =====
 # ========================================
 
+module load java/16.0.2
 source activate cosmic
 
 echo "which python:"
