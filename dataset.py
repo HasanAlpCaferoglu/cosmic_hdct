@@ -46,7 +46,8 @@ class MSMarcoDataset(Dataset):
         for doc_dict in gt_doc_dicts:
             doc_content = doc_dict["body"]
             doc_id = doc_dict["doc_id"]
-            doc_term_weights = doc_dict["cosine_values"]
+            # doc_term_weights = doc_dict["cosine_values"]
+            doc_term_weights = doc_dict["term_weights"]
             doc_content_word_list = doc_content.split(" ")
             if len(doc_content_word_list) > self.max_word_cnt:
                 passage_internal_id = 0
