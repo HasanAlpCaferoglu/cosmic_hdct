@@ -11,7 +11,7 @@
 #SBATCH --partition=ai                     # avg for lovelace_l40s | ai for ampere_a40
 #SBATCH --account=ai
 #SBATCH --gres=gpu:ampere_a40:1          # lovelace_l40s OR ampere_a40 (use with partition=ai and time:1-0:0:0)
-#SBATCH --output=outputs/train_%j.out    # Standard output log file
+#SBATCH --output=outputs/create_docs_%j.out    # Standard output log file
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=alp.caferoglu@bilkent.edu.tr
 #SBATCH --mem=32G
