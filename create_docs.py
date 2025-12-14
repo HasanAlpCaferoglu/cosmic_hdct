@@ -367,7 +367,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Arguments
     parser.add_argument("--model_name", default="google-bert/bert-base-uncased", help="Enter your model name")
-    parser.add_argument("--line_start_row_index", default='500000', type=str, help='Enter msmarco dataset start row for creating documents (inclusive)' )
-    parser.add_argument("--line_end_row_index", default='1000000', type=str, help='Enter msmarco dataset start row for creating documents (exclusive)' )
+    parser.add_argument("--line_start_row_index", default='1000000', type=str, help='Enter msmarco dataset start row for creating documents (inclusive)' )
+    parser.add_argument("--line_end_row_index", default='1500000', type=str, help='Enter msmarco dataset start row for creating documents (exclusive)' )
     args = parser.parse_args()
     main(args)
