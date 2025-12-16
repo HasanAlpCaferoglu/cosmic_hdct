@@ -130,24 +130,28 @@ def merge_wordpieces_hdct(tokens, predictions):
 
         # Skip special tokens & punctuation
         if (not tok) or (tok in SPECIAL) or (tok in PUNCT):
-            current_word = None
+            if current_word is not None:
+                word_list.append(current_word)
+                word_scores.append(current_score)
+                current_word = None
+                current_score = None
             continue
 
-        # If token begins a new word
+        # New word begins
         if not tok.startswith("##"):
-            # Close previous
+            # close previous word
             if current_word is not None:
                 word_list.append(current_word)
                 word_scores.append(current_score)
 
-            # Start new word (HDCT takes ONLY this first piece)
+            # start new word
             current_word = tok
-            current_score = score
+            current_score = score   # HDCT: only first subword score
 
         else:
-            # tok.startswith("##") → continuation piece
-            # HDCT IGNORES continuation pieces entirely.
-            continue
+            # continuation subword → MERGE TEXT ONLY
+            if current_word is not None:
+                current_word += tok[2:]   # remove "##" and append
 
     # append final word
     if current_word is not None:
@@ -342,8 +346,7 @@ def main(args):
 
     # Determine device
     print(f"Cuda Available: {torch.cuda.is_available()}")
-    # device = f"cuda:1" if torch.cuda.is_available() else "cpu"
-    device = f"cuda" if torch.cuda.is_available() else "cpu"
+    device = f"cuda:1" if torch.cuda.is_available() else "cpu"
     print("device: ", device, flush=True)
 
     model_dir_name = model_name.split("/")[1] + "_hdct_150k_optimized"
@@ -367,7 +370,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Arguments
     parser.add_argument("--model_name", default="google-bert/bert-base-uncased", help="Enter your model name")
-    parser.add_argument("--line_start_row_index", default='1000000', type=str, help='Enter msmarco dataset start row for creating documents (inclusive)' )
-    parser.add_argument("--line_end_row_index", default='4000000', type=str, help='Enter msmarco dataset start row for creating documents (exclusive)' )
+    parser.add_argument("--line_start_row_index", default='0', type=str, help='Enter msmarco dataset start row for creating documents (inclusive)' )
+    parser.add_argument("--line_end_row_index", default='500000', type=str, help='Enter msmarco dataset start row for creating documents (exclusive)' )
     args = parser.parse_args()
     main(args)
