@@ -346,7 +346,7 @@ def main(args):
 
     # Determine device
     print(f"Cuda Available: {torch.cuda.is_available()}")
-    device = f"cuda:1" if torch.cuda.is_available() else "cpu"
+    device = f"cuda" if torch.cuda.is_available() else "cpu"
     print("device: ", device, flush=True)
 
     model_dir_name = model_name.split("/")[1] + "_hdct_150k_optimized"
