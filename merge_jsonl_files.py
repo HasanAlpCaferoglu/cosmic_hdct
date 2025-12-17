@@ -7,9 +7,8 @@ if __name__ == "__main__":
     created_docs_dir = os.getenv("HDCT_DOCS_DIR")
     
     input_files = [
-        f"{created_docs_dir}/docs_0_500000.jsonl",
-        f"{created_docs_dir}/docs_500000_1000000.jsonl",
-        f"{created_docs_dir}/docs_1000000_4000000.jsonl",
+        f"{created_docs_dir}/docs_0_2000000.jsonl.jsonl",
+        f"{created_docs_dir}/docs_2000000_3213835.jsonl",
     ]
 
     output_file = f"{created_docs_dir}/docs_combined.jsonl"
