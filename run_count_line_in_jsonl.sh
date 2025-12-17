@@ -4,7 +4,7 @@
 # ===== RESOURCES =====
 # ========================================
 #
-#SBATCH --job-name=hdct_create_docs         #Setting a job name
+#SBATCH --job-name=hdct_count_line_jsonl         #Setting a job name
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8

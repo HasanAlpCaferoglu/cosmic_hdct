@@ -28,6 +28,7 @@ if __name__ == "__main__":
     created_docs_dir = os.getenv("HDCT_DOCS_DIR")
 
     
-    JSONL_PATH = f"{created_docs_dir}/docs_2000000_4000000.jsonl"  # change this path if needed
+    # JSONL_PATH = f"{created_docs_dir}/docs_2000000_4000000.jsonl"  # change this path if needed
+    JSONL_PATH = f"{created_docs_dir}_v1/docs_1000000_4000000.jsonl"  # change this path if needed
     total_lines: int = count_jsonl_lines(JSONL_PATH)
     print(f"Number of lines: {total_lines}")
